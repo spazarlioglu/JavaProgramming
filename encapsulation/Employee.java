@@ -7,10 +7,26 @@ public class Employee {
     private int age;
     private double salary;
 
+    public Employee(String name, char gender, int age, double salary) {
+        setName(name);
+        setGender(gender);
+        setAge(age);
+        setSalary(salary);
+    }
+
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", gender=" + gender +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
+    }
+
     public void setName(String name){
         if (name.equals("")){
             System.out.println("Invalid name : "+name);
-            System.exit(0);
+            return;
         }
         this.name=name;
     }
@@ -22,7 +38,7 @@ public class Employee {
     public void setGender(char gender){
         if (!(gender=='F' || gender=='M')){
             System.out.println("Invalid gender : "+gender);
-            System.exit(0);
+           return;
         }
         this.gender=gender;
     }
@@ -34,7 +50,7 @@ public class Employee {
     public void setAge(int age){
         if (age<16 || age>90){
             System.out.println("Invalid age : "+age);
-            System.exit(0);
+            return;
         }
         this.age=age;
     }
@@ -46,7 +62,7 @@ public class Employee {
     public void setSalary(double salary){
         if (salary<=0){
             System.out.println("Invalid salary : "+salary);
-            System.exit(0);
+            return;
         }
         this.salary=salary;
     }
